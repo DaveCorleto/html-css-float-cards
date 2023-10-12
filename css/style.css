@@ -1,7 +1,7 @@
 * { 
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Tilt Neon', sans-serif;
+    font-family: 'Fredoka', sans-serif;
     
 }
 
@@ -11,7 +11,6 @@ body {
 
 .container {
     width: 80%;
-    height: 900px;
     margin: auto;
     box-sizing: border-box;
 }
@@ -47,20 +46,15 @@ main {
     margin-top: 50px;
 }
 
-
 .row1, .row2 {
-    height: 200px;
-    background-color: bisque;
     margin: auto;
 }
 
 .col {
     box-sizing: border-box;
-    border: 1px solid black;
     margin: 10px;
     width: calc(100% / 3 - 20px);
     float: left;
-    background-color: yellowgreen;
     
 }
 
@@ -68,7 +62,7 @@ main {
 
 .card {
     width: 100%;
-    height: 200px;
+    margin-bottom: 30px;
 }
 
 .card::after {
@@ -80,12 +74,12 @@ main {
 
 .card>img {
     float: left;
+    width: 100px;
 }
 
 .card-right {
     float: left;
-    width: calc(100% - 200px);
-    height: 100%;
+    width: calc(100% - 100px);
 }
 
 .card-right::after {
@@ -96,7 +90,7 @@ main {
 
 .text {
     height: calc(100% / 3);
-    line-height: calc(200px / 3);
+    line-height: calc(100px / 3);
     text-align: left;
     padding-left: 10px;
     vertical-align: middle;
@@ -129,17 +123,28 @@ main {
 }
 Regola per debuggare elementi float in Row1/Row2 */
 
-.row1, .row2::after {
+.row1::before {
     content: "";
     clear: both;
     display: table;
   }
-  .card::after {
+  /* .card::after {
+    content: "";
+    clear: both;
+    display: table;
+  } */
+  /* .col::after {
+    content: "";
+    clear: both;
+    display: table;
+  } */
+main::after {
     content: "";
     clear: both;
     display: table;
   }
-  .col::after {
+
+.container::after {
     content: "";
     clear: both;
     display: table;
