@@ -1,9 +1,8 @@
-:root { 
+* { 
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
     font-family: 'Tilt Neon', sans-serif;
-    font-family: 'Young Serif', serif;
+    
 }
 
 body {
@@ -20,24 +19,38 @@ body {
 
 header {
     width: 100%;
-    height: 300px;
+    height: 200px;
     margin-bottom: 10px;
+}
+
+.header-top, .header-bottom {
+    height: 100px;
 }
 
 h1, .header-bottom>p {
     text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
 }
 .header-bottom>p {
-    font-size: 15px;
+    font-size: 18px;
 }
 
 h1 {
-    padding: 30px;
+    font-weight: bold;
+    color: fuchsia;
+    font-size: 50px;
+ }
+/* Regole di Stile per lo scheletro del contenuto */
+
+main {
+    margin-top: 50px;
 }
+
+
 .row1, .row2 {
-    min-height: 300px;
+    height: 200px;
     background-color: bisque;
-    border: 2px solid black;
     margin: auto;
 }
 
@@ -46,8 +59,88 @@ h1 {
     border: 1px solid black;
     margin: 10px;
     width: calc(100% / 3 - 20px);
-    min-height: 200px;
     float: left;
-    background-color: olivedrab;
+    background-color: yellowgreen;
+    
+}
+
+/* Stile di Card (a sua volta contiene img + sezione card-right con 3div) */
+
+.card {
+    width: 100%;
+    height: 200px;
+}
+
+.card::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+.card>img {
+    float: left;
+}
+
+.card-right {
+    float: left;
+    width: calc(100% - 200px);
+    height: 100%;
+}
+
+.card-right::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+.text {
+    height: calc(100% / 3);
+    line-height: calc(200px / 3);
+    text-align: left;
+    padding-left: 10px;
+    vertical-align: middle;
+    background-color: black;  
+}
+
+.name {
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.job {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.e-mail {
+    color: rgb(100, 100, 255);
+    text-decoration: underline;
+    font-size: 18px;
 
 }
+
+.name .text .e-mail::after {
+    content: "";
+    clear: both;
+    clear: left;
+    clear: right;
+    display: table;
+}
+Regola per debuggare elementi float in Row1/Row2 */
+
+.row1, .row2::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .card::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .col::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
